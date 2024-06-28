@@ -1,11 +1,16 @@
 using UnityEngine;
 using System.Collections;
 
+public enum TileType
+{
+    Normal,
+    Obstacle
+}
 public class Tile : MonoBehaviour {
 
     public int xIndex;
     public int yIndex;
-
+    public TileType tileTipe = TileType.Normal;
     Board m_board;
 
     // Use this for initialization
@@ -45,6 +50,7 @@ public class Tile : MonoBehaviour {
         if (m_board !=null)
         {
             m_board.ReleaseTile();
+            //Animator.
         }
 
     }
