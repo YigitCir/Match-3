@@ -12,6 +12,8 @@ public class Board : MonoBehaviour
 
     public int borderSize;
 
+    public GameObject[] hitPrefabs;
+    
     public GameObject hitPrefab;
     [FormerlySerializedAs("tilePrefab")] public GameObject tileNormalPrefab;
     public GameObject tileObstaclePrefab;
@@ -154,7 +156,7 @@ public class Board : MonoBehaviour
         return null;
     }
 
-    void FillBoard(int falseYOffset = 0, float moveTime = 0.1f)
+    void FillBoard(int falseYOffset = 0, float moveTime = 0.25f)
     {
         int maxInterations = 100;
         int iterations = 0;
@@ -163,7 +165,7 @@ public class Board : MonoBehaviour
         {
             for (int j = 0; j < height; j++)
             {
-                if (m_allGamePieces[i, j] == null && m_allTiles[i,j].tileTipe != TileType.Obstacle)
+                if (m_allGamePieces[i, j] == null && m_allTiles[i,j].tileType != TileType.Obstacle)
                 {
                     GamePiece piece = FillRandomAt(i, j, falseYOffset, moveTime);
                     iterations = 0;
@@ -437,14 +439,20 @@ public class Board : MonoBehaviour
 
     void HighlightTileOff(int x, int y)
     {
-        SpriteRenderer spriteRenderer = m_allTiles[x, y].GetComponent<SpriteRenderer>();
-        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0);
+        if (m_allTiles[x, y].tileType != TileType.Breakable)
+        {
+            SpriteRenderer spriteRenderer = m_allTiles[x, y].GetComponent<SpriteRenderer>();
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0);
+        }
     }
 
     void HighlightTileOn(int x, int y, Color col)
     {
-        SpriteRenderer spriteRenderer = m_allTiles[x, y].GetComponent<SpriteRenderer>();
-        spriteRenderer.color = col;
+        if (m_allTiles[x, y].tileType != TileType.Breakable)
+        {
+            SpriteRenderer spriteRenderer = m_allTiles[x, y].GetComponent<SpriteRenderer>();
+            spriteRenderer.color = col;
+        }
     }
 /*
     void HighlightMatchesAt(int x, int y)
@@ -494,12 +502,44 @@ public class Board : MonoBehaviour
         {
             m_allGamePieces[x, y] = null;
             //You will add this effect to the GamePiece I think
-            GameObject hit = Instantiate(hitPrefab, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-            Destroy(pieceToClear.gameObject);
-            hit.SetActive(true);
-        }
+            if (pieceToClear.matchValue == GamePiece.MatchValue.Blue)
+            {
+                GameObject hit = Instantiate(hitPrefabs[0], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
+            else if (pieceToClear.matchValue == GamePiece.MatchValue.Red)
+            {
+                GameObject hit = Instantiate(hitPrefabs[1], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
+            else if (pieceToClear.matchValue == GamePiece.MatchValue.Green)
+            {
+                GameObject hit = Instantiate(hitPrefabs[2], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
+            else if (pieceToClear.matchValue == GamePiece.MatchValue.Indigo)
+            {
+                GameObject hit = Instantiate(hitPrefabs[3], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
+            else if (pieceToClear.matchValue == GamePiece.MatchValue.Yellow)
+            {
+                GameObject hit = Instantiate(hitPrefabs[4], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
+            else
+            {
+                GameObject hit = Instantiate(hitPrefabs[5], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
 
+            Destroy(pieceToClear.gameObject);
+            
+            
+        }
+        
         HighlightTileOff(x, y);
+        
     }
     
     /*
@@ -522,18 +562,19 @@ public class Board : MonoBehaviour
         {
             if (piece != null)
             {
+                
                 ClearPieceAt(piece.xIndex, piece.yIndex);
             }
         }
     }
 
-    List<GamePiece> CollapseColumn(int column, float collapseTime = 0.1f)
+    List<GamePiece> CollapseColumn(int column, float collapseTime = 0.25f)
     {
         List<GamePiece> movingPieces = new List<GamePiece>();
 
         for (int i = 0; i < height - 1; i++)
         {
-            if (m_allGamePieces[column, i] == null && m_allTiles[column,i].tileTipe != TileType.Obstacle)
+            if (m_allGamePieces[column, i] == null && m_allTiles[column,i].tileType != TileType.Obstacle)
             {
                 for (int j = i + 1; j < height; j++)
                 {
@@ -617,6 +658,27 @@ public class Board : MonoBehaviour
         m_playerInputEnabled = true;
     }
 
+    void BreakTileAt(int x, int y)
+    {
+        Tile tileToBreak = m_allTiles[x, y];
+
+        if (tileToBreak != null)
+        {
+            tileToBreak.BreakTile();
+        }
+    }
+    
+    void BreakTileAt(List<GamePiece> gamePieces)
+    {
+        foreach (var piece in gamePieces)
+        {
+            if (piece != null)
+            {
+                BreakTileAt(piece.xIndex, piece.yIndex);
+            }
+        }
+    }
+
     IEnumerator ClearAndCollapseRoutine(List<GamePiece> gamePieces)
     {
         List<GamePiece> movingPieces = new List<GamePiece>();
@@ -629,6 +691,7 @@ public class Board : MonoBehaviour
         while (!isFinished)
         {
             ClearPieceAt(gamePieces);
+            BreakTileAt(gamePieces);
 
             yield return new WaitForSeconds(0.25f);
             movingPieces = CollapseColumn(gamePieces);
