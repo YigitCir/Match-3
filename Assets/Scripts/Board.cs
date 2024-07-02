@@ -687,7 +687,7 @@ public class Board : MonoBehaviour
         List<GamePiece> matches = new List<GamePiece>();
 
         HighlightPieces(gamePieces);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         bool isFinished = false;
 
         while (!isFinished)
@@ -695,7 +695,7 @@ public class Board : MonoBehaviour
             ClearPieceAt(gamePieces);
             BreakTileAt(gamePieces);
 
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.15f);
             movingPieces = CollapseColumn(gamePieces);
 
             while (!IsCollapsed(movingPieces))
@@ -703,7 +703,7 @@ public class Board : MonoBehaviour
                 yield return null;
             }
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
 
             matches = FindMatchesAt(movingPieces);
 
