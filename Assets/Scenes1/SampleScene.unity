@@ -391,7 +391,7 @@ MonoBehaviour:
   height: 9
   borderSize: 2
   hitPrefabs:
-  - {fileID: 974331561024991135, guid: fe1e0409890f74ff8a64c9757f2f395d, type: 3}
+  - {fileID: 1216678190490736204, guid: 07a0c847cfd944ad08f35466bcb8b48a, type: 3}
   - {fileID: 7322596497424483369, guid: d5629bfe837b54f3dad2f00f8592399a, type: 3}
   - {fileID: 2047326844373395277, guid: 0232f7066d2bc4f93911b60f670c1520, type: 3}
   - {fileID: 184626288590225295, guid: c23977c2b90924c7cbab93645ae28e97, type: 3}

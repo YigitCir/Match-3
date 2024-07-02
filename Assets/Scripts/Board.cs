@@ -452,6 +452,37 @@ public class Board : MonoBehaviour
         {
             SpriteRenderer spriteRenderer = m_allTiles[x, y].GetComponent<SpriteRenderer>();
             spriteRenderer.color = col;
+            GamePiece pieceToClear = m_allGamePieces[x, y];
+            if (pieceToClear.matchValue == GamePiece.MatchValue.Blue)
+            {
+                GameObject hit = Instantiate(hitPrefabs[0], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
+            else if (pieceToClear.matchValue == GamePiece.MatchValue.Red)
+            {
+                GameObject hit = Instantiate(hitPrefabs[1], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
+            else if (pieceToClear.matchValue == GamePiece.MatchValue.Green)
+            {
+                GameObject hit = Instantiate(hitPrefabs[2], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
+            else if (pieceToClear.matchValue == GamePiece.MatchValue.Indigo)
+            {
+                GameObject hit = Instantiate(hitPrefabs[3], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
+            else if (pieceToClear.matchValue == GamePiece.MatchValue.Yellow)
+            {
+                GameObject hit = Instantiate(hitPrefabs[4], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
+            else
+            {
+                GameObject hit = Instantiate(hitPrefabs[5], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+                hit.SetActive(true);
+            }
         }
     }
 /*
@@ -502,36 +533,7 @@ public class Board : MonoBehaviour
         {
             m_allGamePieces[x, y] = null;
             //You will add this effect to the GamePiece I think
-            if (pieceToClear.matchValue == GamePiece.MatchValue.Blue)
-            {
-                GameObject hit = Instantiate(hitPrefabs[0], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
-            else if (pieceToClear.matchValue == GamePiece.MatchValue.Red)
-            {
-                GameObject hit = Instantiate(hitPrefabs[1], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
-            else if (pieceToClear.matchValue == GamePiece.MatchValue.Green)
-            {
-                GameObject hit = Instantiate(hitPrefabs[2], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
-            else if (pieceToClear.matchValue == GamePiece.MatchValue.Indigo)
-            {
-                GameObject hit = Instantiate(hitPrefabs[3], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
-            else if (pieceToClear.matchValue == GamePiece.MatchValue.Yellow)
-            {
-                GameObject hit = Instantiate(hitPrefabs[4], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
-            else
-            {
-                GameObject hit = Instantiate(hitPrefabs[5], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
+            
 
             Destroy(pieceToClear.gameObject);
             
