@@ -30,7 +30,10 @@ public class Board : MonoBehaviour
     bool m_playerInputEnabled = true;
 
 
-    public StartingTile[] startingTiles; 
+    public StartingTile[] startingTiles;
+
+    ParticleManager m_particleManager;
+    
     [System.Serializable]
     public class StartingTile
     {
@@ -48,6 +51,8 @@ public class Board : MonoBehaviour
         SetupTiles();
         SetupCamera();
         FillBoard(10, 0.5f);
+
+        m_particleManager = GameObject.FindWithTag("ParticleManager").GetComponent<ParticleManager>();
     }
 
     void SetupTiles()
@@ -436,7 +441,7 @@ public class Board : MonoBehaviour
         }
         return combinedMatches;
     }
-
+/*
     void HighlightTileOff(int x, int y)
     {
         if (m_allTiles[x, y].tileType != TileType.Breakable)
@@ -452,37 +457,7 @@ public class Board : MonoBehaviour
         {
             SpriteRenderer spriteRenderer = m_allTiles[x, y].GetComponent<SpriteRenderer>();
             spriteRenderer.color = col;
-            GamePiece pieceToClear = m_allGamePieces[x, y];
-            if (pieceToClear.matchValue == GamePiece.MatchValue.Blue)
-            {
-                GameObject hit = Instantiate(hitPrefabs[0], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
-            else if (pieceToClear.matchValue == GamePiece.MatchValue.Red)
-            {
-                GameObject hit = Instantiate(hitPrefabs[1], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
-            else if (pieceToClear.matchValue == GamePiece.MatchValue.Green)
-            {
-                GameObject hit = Instantiate(hitPrefabs[2], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
-            else if (pieceToClear.matchValue == GamePiece.MatchValue.Indigo)
-            {
-                GameObject hit = Instantiate(hitPrefabs[3], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
-            else if (pieceToClear.matchValue == GamePiece.MatchValue.Yellow)
-            {
-                GameObject hit = Instantiate(hitPrefabs[4], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
-            else
-            {
-                GameObject hit = Instantiate(hitPrefabs[5], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-                hit.SetActive(true);
-            }
+            
         }
     }
 /*
@@ -498,7 +473,7 @@ public class Board : MonoBehaviour
             }
         }
     }
-    */
+    
 
     /*
     void HighlightMatches()
@@ -512,7 +487,7 @@ public class Board : MonoBehaviour
             }
         }
     }
-    */
+    
 
     void HighlightPieces(List<GamePiece> gamePieces)
     {
@@ -525,6 +500,7 @@ public class Board : MonoBehaviour
         }
     }
 
+    */
     void ClearPieceAt(int x, int y)
     {
         GamePiece pieceToClear = m_allGamePieces[x, y];
@@ -540,7 +516,7 @@ public class Board : MonoBehaviour
             
         }
         
-        HighlightTileOff(x, y);
+        //HighlightTileOff(x, y);
         
     }
     
@@ -566,11 +542,19 @@ public class Board : MonoBehaviour
             {
                 
                 ClearPieceAt(piece.xIndex, piece.yIndex);
+
+                if (m_particleManager != null)
+                {
+                    m_particleManager.ClearPieceFXAt(piece.xIndex,piece.yIndex);
+                }
+                
+                //GamePiece pieceToClear = m_allGamePieces[piece.xIndex, piece.yIndex];
+                
             }
         }
     }
 
-    List<GamePiece> CollapseColumn(int column, float collapseTime = 0.25f)
+    List<GamePiece> CollapseColumn(int column, float collapseTime = 0.45f)
     {
         List<GamePiece> movingPieces = new List<GamePiece>();
 
@@ -634,26 +618,27 @@ public class Board : MonoBehaviour
 
     void ClearAndRefillBoard(List<GamePiece> gamePieces)
     {
+        
         StartCoroutine(ClearAndRefillBoardRoutine(gamePieces));
     }
 
     IEnumerator ClearAndRefillBoardRoutine(List<GamePiece> gamePieces)
     {
-
         m_playerInputEnabled = false;
         List<GamePiece> matches = gamePieces;
 
         do
         {
             // clear and collapse
+            
             yield return StartCoroutine(ClearAndCollapseRoutine(matches));
-            yield return null;
+            yield return new WaitForSeconds(0.25f);
 
             //refill
             yield return StartCoroutine(RefillRoutine());
             matches = FindAllMatches();
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.25f);
         }
         while (matches.Count != 0);
 
@@ -664,8 +649,12 @@ public class Board : MonoBehaviour
     {
         Tile tileToBreak = m_allTiles[x, y];
 
-        if (tileToBreak != null)
+        if (tileToBreak != null && tileToBreak.tileType == TileType.Breakable)
         {
+            if (m_particleManager != null)
+            {
+                m_particleManager.BrekTileFXAt(tileToBreak.breakableValue, x,y,0);
+            }
             tileToBreak.BreakTile();
         }
     }
@@ -683,15 +672,18 @@ public class Board : MonoBehaviour
 
     IEnumerator ClearAndCollapseRoutine(List<GamePiece> gamePieces)
     {
+        
         List<GamePiece> movingPieces = new List<GamePiece>();
         List<GamePiece> matches = new List<GamePiece>();
 
-        HighlightPieces(gamePieces);
-        yield return new WaitForSeconds(0.25f);
+        //HighlightPieces(gamePieces);
+        yield return new WaitForSeconds(0.2f);
         bool isFinished = false;
 
         while (!isFinished)
         {
+            HitCat(gamePieces);
+            yield return new WaitForSeconds(0.15f);
             ClearPieceAt(gamePieces);
             BreakTileAt(gamePieces);
 
@@ -714,6 +706,7 @@ public class Board : MonoBehaviour
             }
             else
             {
+                yield return new WaitForSeconds(0.3f);
                 yield return StartCoroutine(ClearAndCollapseRoutine(matches));
             }
         }
@@ -741,6 +734,54 @@ public class Board : MonoBehaviour
         }
 
         return true;
+    }
+
+    void HitCat(List<GamePiece> gamePieces)
+    {
+        GameObject hitCat = null;
+            foreach (var piece in gamePieces)
+            {
+
+                switch (piece.matchValue)
+                {
+
+                    case GamePiece.MatchValue.Blue:
+                        hitCat =
+                            Instantiate(hitPrefabs[0], new Vector3(piece.xIndex, piece.yIndex, 0),
+                                Quaternion.identity) as GameObject;
+                        hitCat.SetActive(true);
+                        Destroy(hitCat, 2f);
+                        break;
+                    case GamePiece.MatchValue.Red:
+                        hitCat =
+                            Instantiate(hitPrefabs[1], new Vector3(piece.xIndex, piece.yIndex, 0),
+                                Quaternion.identity) as GameObject;
+                        hitCat.SetActive(true);
+                        Destroy(hitCat, 2f);
+                        break;
+                    case GamePiece.MatchValue.Green:
+                        hitCat =
+                            Instantiate(hitPrefabs[2], new Vector3(piece.xIndex, piece.yIndex, 0),
+                                Quaternion.identity) as GameObject;
+                        hitCat.SetActive(true);
+                        Destroy(hitCat, 2f);
+                        break;
+                    case GamePiece.MatchValue.Indigo:
+                        hitCat =
+                            Instantiate(hitPrefabs[3], new Vector3(piece.xIndex, piece.yIndex, 0),
+                                Quaternion.identity) as GameObject;
+                        hitCat.SetActive(true);
+                        Destroy(hitCat, 2f);
+                        break;
+                    case GamePiece.MatchValue.Yellow:
+                        hitCat =
+                            Instantiate(hitPrefabs[4], new Vector3(piece.xIndex, piece.yIndex, 0),
+                                Quaternion.identity) as GameObject;
+                        hitCat.SetActive(true);
+                        Destroy(hitCat, 2f);
+                        break;
+                }
+            }
     }
 
 
