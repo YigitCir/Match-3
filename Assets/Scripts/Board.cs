@@ -554,7 +554,7 @@ public class Board : MonoBehaviour
         }
     }
 
-    List<GamePiece> CollapseColumn(int column, float collapseTime = 0.45f)
+    List<GamePiece> CollapseColumn(int column, float collapseTime = 0.15f)
     {
         List<GamePiece> movingPieces = new List<GamePiece>();
 
@@ -632,13 +632,13 @@ public class Board : MonoBehaviour
             // clear and collapse
             
             yield return StartCoroutine(ClearAndCollapseRoutine(matches));
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.05f);
 
             //refill
             yield return StartCoroutine(RefillRoutine());
             matches = FindAllMatches();
 
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.05f);
         }
         while (matches.Count != 0);
 
@@ -677,17 +677,17 @@ public class Board : MonoBehaviour
         List<GamePiece> matches = new List<GamePiece>();
 
         //HighlightPieces(gamePieces);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.05f);
         bool isFinished = false;
 
         while (!isFinished)
         {
             HitCat(gamePieces);
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.05f);
             ClearPieceAt(gamePieces);
             BreakTileAt(gamePieces);
 
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.05f);
             movingPieces = CollapseColumn(gamePieces);
 
             while (!IsCollapsed(movingPieces))
@@ -706,7 +706,7 @@ public class Board : MonoBehaviour
             }
             else
             {
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.05f);
                 yield return StartCoroutine(ClearAndCollapseRoutine(matches));
             }
         }
@@ -750,35 +750,35 @@ public class Board : MonoBehaviour
                             Instantiate(hitPrefabs[0], new Vector3(piece.xIndex, piece.yIndex, 0),
                                 Quaternion.identity) as GameObject;
                         hitCat.SetActive(true);
-                        Destroy(hitCat, 2f);
+                        Destroy(hitCat, 0.5f);
                         break;
                     case GamePiece.MatchValue.Red:
                         hitCat =
                             Instantiate(hitPrefabs[1], new Vector3(piece.xIndex, piece.yIndex, 0),
                                 Quaternion.identity) as GameObject;
                         hitCat.SetActive(true);
-                        Destroy(hitCat, 2f);
+                        Destroy(hitCat, 0.5f);
                         break;
                     case GamePiece.MatchValue.Green:
                         hitCat =
                             Instantiate(hitPrefabs[2], new Vector3(piece.xIndex, piece.yIndex, 0),
                                 Quaternion.identity) as GameObject;
                         hitCat.SetActive(true);
-                        Destroy(hitCat, 2f);
+                        Destroy(hitCat, 0.5f);
                         break;
                     case GamePiece.MatchValue.Indigo:
                         hitCat =
                             Instantiate(hitPrefabs[3], new Vector3(piece.xIndex, piece.yIndex, 0),
                                 Quaternion.identity) as GameObject;
                         hitCat.SetActive(true);
-                        Destroy(hitCat, 2f);
+                        Destroy(hitCat, 0.5f);
                         break;
                     case GamePiece.MatchValue.Yellow:
                         hitCat =
                             Instantiate(hitPrefabs[4], new Vector3(piece.xIndex, piece.yIndex, 0),
                                 Quaternion.identity) as GameObject;
                         hitCat.SetActive(true);
-                        Destroy(hitCat, 2f);
+                        Destroy(hitCat, 0.5f);
                         break;
                 }
             }
