@@ -1,111 +1,107 @@
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public enum TileType
+public enum TileType 
 {
-    Normal,
-    Obstacle,
-    Breakable
+	Normal,
+	Obstacle,
+	Breakable
 }
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Tile : MonoBehaviour {
 
-    public int xIndex;
-    public int yIndex;
-    public TileType tileType = TileType.Normal;
-    Board m_board;
+	public int xIndex;
+	public int yIndex;
 
-    private SpriteRenderer _spriteRenderer;
+	Board m_board;
 
-    public int breakableValue = 0;
-    public Sprite[] _breakableSprites;
+	public TileType tileType = TileType.Normal;
 
-    public Color normalColor;
+	SpriteRenderer m_spriteRenderer;
 
-    private void Awake()
-    {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+	public int breakableValue = 0;
+	public Sprite[] breakableSprites;
 
-    // Use this for initialization
-    void Start () 
-    {
-	
-    }
+	public Color normalColor;
 
-    public void Init(int x, int y, Board board)
-    {
-        xIndex = x;
-        yIndex = y;
-        m_board = board;
+	// Use this for initialization
+	void Awake () 
+	{
+		m_spriteRenderer = GetComponent<SpriteRenderer>();
+	}
 
-        if (tileType == TileType.Breakable)
-        {
-            if (_breakableSprites[breakableValue] != null)
-            {
-                _spriteRenderer.sprite = _breakableSprites[breakableValue];
-            }
-        }
+	public void Init(int x, int y, Board board)
+	{
+		xIndex = x;
+		yIndex = y;
+		m_board = board;
 
-    }
+		if (tileType == TileType.Breakable)
+		{
+			if (breakableSprites[breakableValue] !=null)
+			{
+				m_spriteRenderer.sprite = breakableSprites[breakableValue];
+			}
+		}
+	}
 
-    void OnMouseDown()
-    {
-        if (m_board !=null)
-        {
-            m_board.ClickTile(this);
-        }
+	void OnMouseDown()
+	{
+		if (m_board !=null)
+		{
+			m_board.ClickTile(this);
+		}
 
-    }
+	}
 
-    void OnMouseEnter()
-    {
-        if (m_board !=null)
-        {
-            m_board.DragToTile(this);
-        }
+	void OnMouseEnter()
+	{
+		if (m_board !=null)
+		{
+			m_board.DragToTile(this);
+		}
 
-    }
+	}
 
-    void OnMouseUp()
-    {
-        if (m_board !=null)
-        {
-            m_board.ReleaseTile();
-            //Animator.
-        }
+	void OnMouseUp()
+	{
+		if (m_board !=null)
+		{
+			m_board.ReleaseTile();
+		}
 
-    }
+	}
 
-    public void BreakTile()
-    {
-        if (tileType != TileType.Breakable)
-        {
-            return;
-        }
+	public void BreakTile()
+	{
+		if (tileType != TileType.Breakable)
+		{
+			return;
+		}
 
-        StartCoroutine(BreakTileRoutine());
-    }
+		StartCoroutine(BreakTileRoutine());
 
-    IEnumerator BreakTileRoutine()
-    {
-        breakableValue = Mathf.Clamp(--breakableValue, 0, breakableValue);
-        
-        
-        yield return new WaitForSeconds(0.25f);
+	}
 
-        if (_breakableSprites[breakableValue] != null)
-        {
-            _spriteRenderer.sprite = _breakableSprites[breakableValue];
-        }
+	IEnumerator BreakTileRoutine()
+	{
+		breakableValue = Mathf.Clamp(breakableValue--, 0, breakableValue);
 
-        if (breakableValue == 0)
-        {
-            tileType = TileType.Normal;
-            _spriteRenderer.color = normalColor;
-        }
-        
-    }
+		yield return new WaitForSeconds(0.25f);
+
+		if (breakableSprites[breakableValue] !=null)
+		{
+			m_spriteRenderer.sprite = breakableSprites[breakableValue];
+		}
+
+		if (breakableValue == 0)
+		{
+			tileType = TileType.Normal;
+			m_spriteRenderer.color = normalColor;
+
+		}
+
+	}
+
 }

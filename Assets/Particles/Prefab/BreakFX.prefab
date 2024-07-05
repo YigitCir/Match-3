@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7261701339008512810}
-  - component: {fileID: 8859141675274215384}
+  - component: {fileID: 7231463486453689328}
   m_Layer: 0
   m_Name: BreakFX
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 2448975127805455121}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8859141675274215384
+--- !u!114 &7231463486453689328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2495999875388387048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26de9f74cac4345159442b1ae97216de, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cb9c2e49a0ec462cb8e39df35483ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allParticles: []

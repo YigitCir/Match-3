@@ -1,6 +1,20 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
-using NaughtyAttributes;
+
+public enum MatchValue
+{
+	Yellow,
+	Blue,
+	Magenta,
+	Indigo,
+	Green,
+	Teal,
+	Red,
+	Cyan,
+	Wild,
+	None
+}
+
 
 public class GamePiece : MonoBehaviour {
 
@@ -22,20 +36,8 @@ public class GamePiece : MonoBehaviour {
 		SmootherStep
 	};
 
-	
 	public MatchValue matchValue;
-	public enum MatchValue
-	{
-		Yellow,
-		Blue,
-		Magenta,
-		Indigo,
-		Green,
-		Teal,
-		Red,
-		Cyan,
-		Wild
-	}
+
 
 
 	// Use this for initialization
@@ -101,7 +103,6 @@ public class GamePiece : MonoBehaviour {
 			if (Vector3.Distance(transform.position, destination) < 0.01f)
 			{
 
-
 				reachedDestination = true;
 
 				if (m_board !=null)
@@ -149,4 +150,21 @@ public class GamePiece : MonoBehaviour {
 
 	}
 
+	public void ChangeColor(GamePiece pieceToMatch)
+	{
+		SpriteRenderer rendererToChange = GetComponent<SpriteRenderer>();
+
+		if (pieceToMatch !=null)
+		{
+			SpriteRenderer rendererToMatch = pieceToMatch.GetComponent<SpriteRenderer>();
+
+			if (rendererToMatch !=null && rendererToChange !=null)
+			{
+				rendererToChange.color = rendererToMatch.color;
+			}
+
+			matchValue = pieceToMatch.matchValue;
+		}
+
+	}
 }
