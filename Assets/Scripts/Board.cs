@@ -13,8 +13,7 @@ public class Board : MonoBehaviour
     public GameObject tileNormalPrefab;
     public GameObject tileObstaclePrefab;
     public GameObject[] gamePiecePrefabs;
-    public GameObject[] hitPrefabs;
-    
+
     public GameObject adjacentBombPrefab;
     public GameObject columnBombPrefab;
     public GameObject rowBombPrefab;
@@ -48,6 +47,8 @@ public class Board : MonoBehaviour
     public int fillYOffset = 10;
     public float fillMoveTime = 0.5f;
 
+    int m_scoreMultiplier = 0;
+
     [System.Serializable]
     public class StartingObject
     {
@@ -61,18 +62,18 @@ public class Board : MonoBehaviour
     {
         m_allTiles = new Tile[width, height];
         m_allGamePieces = new GamePiece[width, height];
-
-        SetupTiles();
-        SetupGamePieces();
-
-        List<GamePiece> startingCollectibles = FindAllCollectibles();
-        collectibleCount = startingCollectibles.Count;
-
-        SetupCamera();
-        FillBoard(fillYOffset, fillMoveTime);
-
         m_particleManager = GameObject.FindWithTag("ParticleManager").GetComponent<ParticleManager>();
 
+    }
+
+    public void SetupBoard()
+    {
+        SetupTiles();
+        SetupGamePieces();
+        List<GamePiece> startingCollectibles = FindAllCollectibles();
+        collectibleCount = startingCollectibles.Count;
+        SetupCamera();
+        FillBoard(fillYOffset, fillMoveTime);
     }
 
     void MakeTile(GameObject prefab, int x, int y, int z = 0)
@@ -296,6 +297,23 @@ public class Board : MonoBehaviour
         {
             m_clickedTile = tile;
             //Debug.Log("clicked tile: " + tile.name);
+
+            GamePiece clickedPiece = m_allGamePieces[tile.xIndex, tile.yIndex];
+            if (clickedPiece.GetComponent<Bomb>() != null)
+            {
+                if (clickedPiece.GetComponent<Bomb>().bombType == BombType.Row)
+                {
+                    ClearAndRefillBoard(GetRowPieces(clickedPiece.yIndex).ToList());
+                }
+                else if (clickedPiece.GetComponent<Bomb>().bombType == BombType.Column)
+                {
+                    ClearAndRefillBoard(GetColumnPieces(clickedPiece.xIndex).ToList());
+                }
+                else if (clickedPiece.GetComponent<Bomb>().bombType == BombType.Adjacent)
+                {
+                    ClearAndRefillBoard(GetAdjacentPieces(clickedPiece.xIndex,clickedPiece.yIndex).ToList());
+                }
+            }
         }
     }
 
@@ -369,6 +387,12 @@ public class Board : MonoBehaviour
                 }
                 else
                 {
+                    if (GameManager.Instance != null)
+                    {
+                        GameManager.Instance.movesLeft--;
+                        GameManager.Instance.UpdateMoves();
+                    }
+
                     yield return new WaitForSeconds(swapTime);
                     Vector2 swipeDirection = new Vector2(targetTile.xIndex - clickedTile.xIndex, targetTile.yIndex - clickedTile.yIndex);
                     m_clickedTileBomb = DropBomb(clickedTile.xIndex, clickedTile.yIndex, swipeDirection, clickedPieceMatches);
@@ -567,60 +591,6 @@ public class Board : MonoBehaviour
         return combinedMatches;
     }
 
-    void HighlightTileOff(int x, int y)
-    {
-        if (m_allTiles[x, y].tileType != TileType.Breakable)
-        {
-            SpriteRenderer spriteRenderer = m_allTiles[x, y].GetComponent<SpriteRenderer>();
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0);
-        }
-    }
-
-    void HighlightTileOn(int x, int y, Color col)
-    {
-        if (m_allTiles[x, y].tileType != TileType.Breakable)
-        {
-            SpriteRenderer spriteRenderer = m_allTiles[x, y].GetComponent<SpriteRenderer>();
-            spriteRenderer.color = col;
-        }
-    }
-
-    void HighlightMatchesAt(int x, int y)
-    {
-        HighlightTileOff(x, y);
-        var combinedMatches = FindMatchesAt(x, y);
-        if (combinedMatches.Count > 0)
-        {
-            foreach (GamePiece piece in combinedMatches)
-            {
-                HighlightTileOn(piece.xIndex, piece.yIndex, piece.GetComponent<SpriteRenderer>().color);
-            }
-        }
-    }
-
-    void HighlightMatches()
-    {
-        for (int i = 0; i < width; i++)
-        {
-            for (int j = 0; j < height; j++)
-            {
-                HighlightMatchesAt(i, j);
-
-            }
-        }
-    }
-
-    void HighlightPieces(List<GamePiece> gamePieces)
-    {
-        foreach (GamePiece piece in gamePieces)
-        {
-            if (piece != null)
-            {
-                HighlightTileOn(piece.xIndex, piece.yIndex, piece.GetComponent<SpriteRenderer>().color);
-            }
-        }
-    }
-
     void ClearPieceAt(int x, int y)
     {
         GamePiece pieceToClear = m_allGamePieces[x, y];
@@ -628,10 +598,9 @@ public class Board : MonoBehaviour
         if (pieceToClear != null)
         {
             m_allGamePieces[x, y] = null;
-            Destroy(pieceToClear.gameObject, 0.5f);
+            Destroy(pieceToClear.gameObject,0.5f);
         }
-
-        //HighlightTileOff(x,y);
+        
     }
 
     void ClearBoard()
@@ -652,6 +621,15 @@ public class Board : MonoBehaviour
             if (piece != null)
             {
                 ClearPieceAt(piece.xIndex, piece.yIndex);
+
+                int bonus = 0;
+
+                if (gamePieces.Count >= 4)
+                {
+                    bonus = 20;
+                }
+
+                piece.ScorePoints(m_scoreMultiplier, bonus);
 
                 if (m_particleManager != null)
                 {
@@ -766,8 +744,12 @@ public class Board : MonoBehaviour
 
         List<GamePiece> matches = gamePieces;
 
+        m_scoreMultiplier = 0;
+
         do
         {
+            m_scoreMultiplier++;
+
             yield return StartCoroutine(ClearAndCollapseRoutine(matches));
 
             // add pause here 
@@ -850,6 +832,11 @@ public class Board : MonoBehaviour
             }
             else
             {
+                m_scoreMultiplier++;
+                if (SoundManager.Instance !=null)
+                {
+                	SoundManager.Instance.PlayBonusSound();
+                }
                 yield return StartCoroutine(ClearAndCollapseRoutine(matches));
             }
         }
@@ -1148,7 +1135,6 @@ public class Board : MonoBehaviour
 
         return bombedPieces.Except(piecesToRemove).ToList();
     }
-    
 
 
 

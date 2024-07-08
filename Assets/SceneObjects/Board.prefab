@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1131700074988119005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 637068399721913374}
+  - component: {fileID: 2615249553525180675}
+  m_Layer: 0
+  m_Name: Board
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &637068399721913374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131700074988119005}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2615249553525180675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131700074988119005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a780fa0c465746b9a96d9312f1126ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 8
+  height: 9
+  borderSize: 1
+  tileNormalPrefab: {fileID: 187378, guid: 40e936c9a5bf249fd961db8ef23fbc7b, type: 3}
+  tileObstaclePrefab: {fileID: 1000010554755960, guid: 4e5164a8032474304bcbd2ba0c3eae7e, type: 3}
+  gamePiecePrefabs:
+  - {fileID: 1000011029387174, guid: d5213cbf423464b198a8ea0635b2c83a, type: 3}
+  - {fileID: 1000012362009328, guid: b6d1543d5ad4948aaae26e1e7570e386, type: 3}
+  - {fileID: 1000011697559180, guid: 8f62ee363864149f4bb7981086aa48ef, type: 3}
+  - {fileID: 1000013582439192, guid: ce0cdf7a8a6c543fb9d96817d1d2f3f6, type: 3}
+  - {fileID: 1000013942094482, guid: 37d845b51eba4482b9f81557f91a97fe, type: 3}
+  adjacentBombPrefab: {fileID: 1000010931321420, guid: 757f0ed6eedfb4c818cd4877ebb022c2, type: 3}
+  columnBombPrefab: {fileID: 1000014205889934, guid: e75f0fa399665484281c354f51cd9ae5, type: 3}
+  rowBombPrefab: {fileID: 1000013696196106, guid: d822021d9893c417ba7f97e02469217d, type: 3}
+  colorBombPrefab: {fileID: 1000013338762844, guid: 1a1602c69ff0542d7905e28330aca523, type: 3}
+  maxCollectibles: 4
+  collectibleCount: 0
+  chanceForCollectible: 0.49
+  collectiblePrefabs:
+  - {fileID: 1000011192920742, guid: 39d7e8803a8074f13adfcbe5567fefca, type: 3}
+  - {fileID: 1000010844454024, guid: 3cc39e0b689e449179a99ac4144c4d3c, type: 3}
+  swapTime: 0.25
+  startingTiles: []
+  startingGamePieces:
+  - prefab: {fileID: 1000010844454024, guid: 3cc39e0b689e449179a99ac4144c4d3c, type: 3}
+    x: 4
+    y: 8
+    z: 0
+  fillYOffset: 10
+  fillMoveTime: 0.5

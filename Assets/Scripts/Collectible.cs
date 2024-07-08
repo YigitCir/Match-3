@@ -13,9 +13,5 @@ public class Collectible : GamePiece
 		matchValue = MatchValue.None;
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
+
 }

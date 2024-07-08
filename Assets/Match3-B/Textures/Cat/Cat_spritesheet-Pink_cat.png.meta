@@ -1,0 +1,681 @@
+fileFormatVersion: 2
+guid: 48189d6d2a0ea4ad280a64e039f0b871
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 959
+        width: 230
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca935caf9f5cb4f1292024b4071b1a95
+      internalID: -390948985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_1
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 959
+        width: 230
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320641e6baaf6436a9b6fbeed32a59d2
+      internalID: -557245933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_2
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 959
+        width: 231
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf2615f307e54f60bec64d88153983b
+      internalID: -194303390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_3
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 958
+        width: 233
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8aee93e310c4a71ad548b80013d150
+      internalID: -1358410972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 770
+        width: 234
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09205610f5334dda833509b45cae124
+      internalID: -1541298924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_5
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 770
+        width: 236
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59d874dc42df4d2682b89ea2f39e1e4
+      internalID: 524498147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_6
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 768
+        width: 238
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374e4f3275b87459d948b603e5034dc4
+      internalID: -1425880025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_7
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 767
+        width: 240
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d36db8384fd7402393458d11e4c162c
+      internalID: 140202533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 575
+        width: 242
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958158ae2b573438982c868d2d0b310c
+      internalID: 1440385672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_9
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 575
+        width: 244
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b3ffaf75b464e4281bc12f3bbec905
+      internalID: -1229690995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_10
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 575
+        width: 246
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad35858c53b2a4e559f87c6e3de66d7d
+      internalID: 2048030917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_11
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 574
+        width: 246
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f89c59aaa4d54379bf543e82cce0eec
+      internalID: 1578664405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 379
+        width: 246
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52a57edc6ea343c3858385db8d5a159
+      internalID: 165625679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_13
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 381
+        width: 246
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af6f9a0b309d4c74b8c269071ab395e
+      internalID: -266909587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_14
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 380
+        width: 246
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c08162ae7b64bde8d82cb9b4dea7de
+      internalID: 1642258771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_15
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 382
+        width: 244
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7a430995a0f48f8b36906a5aceca1c
+      internalID: 2023985031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 188
+        width: 242
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf13c44c8ca04a5c981d515ab02d0f2
+      internalID: -913034862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_17
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 190
+        width: 240
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557313e82df9143e381e063a93ef1401
+      internalID: 1789299181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_18
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 190
+        width: 238
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5acd6195c9b3402db2f877db64a3e34
+      internalID: -1032393464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_19
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 191
+        width: 236
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3cce7348766b4b5c9f59f5e43e0d368
+      internalID: -7196372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 234
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4be711198e3414bb3036d7d6f9b1f5
+      internalID: 904314322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_21
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1
+        width: 232
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5414e48f3274522969676258ee7b10
+      internalID: -1231037840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_22
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 2
+        width: 230
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ef9935558ee4afd8318e117f865870
+      internalID: -1539621772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_spritesheet-Pink_cat_23
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 2
+        width: 230
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a6ba079f7ac48358a4ee34f5334a61
+      internalID: 963773106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Cat_spritesheet-Pink_cat_0: -390948985
+      Cat_spritesheet-Pink_cat_1: -557245933
+      Cat_spritesheet-Pink_cat_10: 2048030917
+      Cat_spritesheet-Pink_cat_11: 1578664405
+      Cat_spritesheet-Pink_cat_12: 165625679
+      Cat_spritesheet-Pink_cat_13: -266909587
+      Cat_spritesheet-Pink_cat_14: 1642258771
+      Cat_spritesheet-Pink_cat_15: 2023985031
+      Cat_spritesheet-Pink_cat_16: -913034862
+      Cat_spritesheet-Pink_cat_17: 1789299181
+      Cat_spritesheet-Pink_cat_18: -1032393464
+      Cat_spritesheet-Pink_cat_19: -7196372
+      Cat_spritesheet-Pink_cat_2: -194303390
+      Cat_spritesheet-Pink_cat_20: 904314322
+      Cat_spritesheet-Pink_cat_21: -1231037840
+      Cat_spritesheet-Pink_cat_22: -1539621772
+      Cat_spritesheet-Pink_cat_23: 963773106
+      Cat_spritesheet-Pink_cat_3: -1358410972
+      Cat_spritesheet-Pink_cat_4: -1541298924
+      Cat_spritesheet-Pink_cat_5: 524498147
+      Cat_spritesheet-Pink_cat_6: -1425880025
+      Cat_spritesheet-Pink_cat_7: 140202533
+      Cat_spritesheet-Pink_cat_8: 1440385672
+      Cat_spritesheet-Pink_cat_9: -1229690995
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
