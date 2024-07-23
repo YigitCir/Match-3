@@ -1625,46 +1625,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a780fa0c465746b9a96d9312f1126ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 8
-  height: 9
+  width: 5
+  height: 5
   borderSize: 1
-  tileNormalPrefab: {fileID: 187378, guid: 40e936c9a5bf249fd961db8ef23fbc7b, type: 3}
-  tileObstaclePrefab: {fileID: 1000010554755960, guid: 4e5164a8032474304bcbd2ba0c3eae7e, type: 3}
+  tileNormalPrefab: {fileID: 7940534766318097422, guid: 425a79de2cf564429b13928aa17acd36, type: 3}
+  tileObstaclePrefab: {fileID: 7940534766318097422, guid: 425a79de2cf564429b13928aa17acd36, type: 3}
   gamePiecePrefabs:
-  - {fileID: 4229547083741503806, guid: 7710fe93170be4c33bf7ca2db7cb1c20, type: 3}
-  - {fileID: 8737075556255370845, guid: 24a4b05fc7544418f8862b6fc2a4aa32, type: 3}
-  - {fileID: 4645092999555658555, guid: 0c09cc822afc54126aa252edee38787a, type: 3}
-  - {fileID: 3742615700188056572, guid: 1082b36a57cbe46c2874b6253e2537f3, type: 3}
-  - {fileID: 7078744711267165668, guid: 776490637c3c64491a136f404af46039, type: 3}
-  adjacentBombPrefab: {fileID: 1000010931321420, guid: 757f0ed6eedfb4c818cd4877ebb022c2, type: 3}
-  columnBombPrefab: {fileID: 1000014205889934, guid: e75f0fa399665484281c354f51cd9ae5, type: 3}
-  rowBombPrefab: {fileID: 1000013696196106, guid: d822021d9893c417ba7f97e02469217d, type: 3}
-  colorBombPrefab: {fileID: 1000013338762844, guid: 1a1602c69ff0542d7905e28330aca523, type: 3}
-  maxCollectibles: 4
-  collectibleCount: 0
-  chanceForCollectible: 0.49
+  - {fileID: 8120703929137188102, guid: 82349db0cf6694468aa46e3f3773ef0f, type: 3}
+  - {fileID: 6188681264555342843, guid: 87964908523434aab9bfb4345b3c94f9, type: 3}
+  - {fileID: 7505236888872400900, guid: e219d86d4658e4b6886d655cd3e6d9be, type: 3}
+  - {fileID: 5585705155522881520, guid: 15591fafd2ed140199a77956afc78440, type: 3}
+  - {fileID: 8121052745698366436, guid: 5ff597b0b485e47ca8eec5234efd6f06, type: 3}
+  adjacentBombPrefab: {fileID: 5585705155522881520, guid: 15591fafd2ed140199a77956afc78440, type: 3}
+  columnBombPrefab: {fileID: 5585705155522881520, guid: 15591fafd2ed140199a77956afc78440, type: 3}
+  rowBombPrefab: {fileID: 5585705155522881520, guid: 15591fafd2ed140199a77956afc78440, type: 3}
+  colorBombPrefab: {fileID: 5585705155522881520, guid: 15591fafd2ed140199a77956afc78440, type: 3}
+  maxCollectibles: 1
+  collectibleCount: 1
+  chanceForCollectible: 0.5
   collectiblePrefabs:
-  - {fileID: 1000011192920742, guid: 39d7e8803a8074f13adfcbe5567fefca, type: 3}
-  - {fileID: 1000010844454024, guid: 3cc39e0b689e449179a99ac4144c4d3c, type: 3}
-  swapTime: 0.25
+  - {fileID: 9183917735979207631, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+  swapTime: 0.2
   startingTiles: []
-  startingGamePieces:
-  - prefab: {fileID: 1000010844454024, guid: 3cc39e0b689e449179a99ac4144c4d3c, type: 3}
-    x: 4
-    y: 8
-    z: 0
-  - prefab: {fileID: 1000010931321420, guid: 757f0ed6eedfb4c818cd4877ebb022c2, type: 3}
-    x: 5
-    y: 6
-    z: 0
-  - prefab: {fileID: 1000013696196106, guid: d822021d9893c417ba7f97e02469217d, type: 3}
-    x: 1
-    y: 2
-    z: 0
-  - prefab: {fileID: 1000014205889934, guid: e75f0fa399665484281c354f51cd9ae5, type: 3}
-    x: 3
-    y: 4
-    z: 0
+  startingGamePieces: []
   fillYOffset: 10
   fillMoveTime: 0.2
 --- !u!4 &1688913552
@@ -2179,6 +2162,67 @@ MonoBehaviour:
   fxVolume: 1
   lowPitch: 0.95
   highPitch: 1.05
+--- !u!1001 &895311260141256872
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5851159365451153727, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1742.3046
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851159365451153727, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1110.3357
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851159365451153727, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851159365451153727, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999016
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851159365451153727, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851159365451153727, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851159365451153727, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0140305385
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851159365451153727, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851159365451153727, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851159365451153727, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -1.608
+      objectReference: {fileID: 0}
+    - target: {fileID: 7629091002470779811, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183917735979207631, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
+      propertyPath: m_Name
+      value: Collectible.001
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2189,3 +2233,4 @@ SceneRoots:
   - {fileID: 352117024}
   - {fileID: 1013188353}
   - {fileID: 1727312869}
+  - {fileID: 895311260141256872}
