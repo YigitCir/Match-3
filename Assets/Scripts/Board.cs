@@ -598,7 +598,7 @@ public class Board : MonoBehaviour
         if (pieceToClear != null)
         {
             m_allGamePieces[x, y] = null;
-            Destroy(pieceToClear.gameObject,0.5f);
+            Destroy(pieceToClear.gameObject,0.25f);
         }
         
     }

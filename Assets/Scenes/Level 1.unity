@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3f65956c6b5489ea25cccbc9783b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clearFXPrefab: {fileID: 2076707471915597859, guid: 66191bcaed7ba4e0ca57251dc4d46b79, type: 3}
+  clearFXPrefab: {fileID: 2501364523583184049, guid: 2aea12dc784e14876b949a94fd1669e9, type: 3}
   breakFXPrefab: {fileID: 1000013032388978, guid: dca6c51fc5c6549548508efd58bdfdb9, type: 3}
   doubleBreakFXPrefab: {fileID: 1000013940112220, guid: f35d57202eae54e0d92bd1d2feed734e, type: 3}
   bombFXPrefab: {fileID: 2076707471915597859, guid: 66191bcaed7ba4e0ca57251dc4d46b79, type: 3}
