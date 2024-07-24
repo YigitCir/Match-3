@@ -4,16 +4,16 @@ using System.Collections;
 public class ParticleManager : MonoBehaviour
 {
 
-	public GameObject clearFXPrefab;
+	public GameObject[] clearFXPrefab;
 	public GameObject breakFXPrefab;
 	public GameObject doubleBreakFXPrefab;
 	public GameObject bombFXPrefab;
 
-	public void ClearPieceFXAt(int x, int y, int z = 0)
+	public void ClearPieceFXAt(int x, int y,int index, int z = 0)
 	{
 		if (clearFXPrefab != null)
 		{
-			GameObject clearFX = Instantiate(clearFXPrefab, new Vector3(x,y,z), Quaternion.identity) as GameObject;
+			GameObject clearFX = Instantiate(clearFXPrefab[index], new Vector3(x,y,z), Quaternion.identity) as GameObject;
 
 			ParticlePlayer particlePlayer = clearFX.GetComponent<ParticlePlayer>();
 

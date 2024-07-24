@@ -639,7 +639,29 @@ public class Board : MonoBehaviour
                     }
                     else
                     {
-                        m_particleManager.ClearPieceFXAt(piece.xIndex, piece.yIndex);
+                        int index;
+                        switch (piece.matchValue)
+                        {
+                            case MatchValue.Blue:
+                                index = 0;
+                                break;
+                            case MatchValue.Yellow:
+                                index = 1;
+                                break;
+                            case MatchValue.Green:
+                                index = 2;
+                                break;
+                            case MatchValue.Red:
+                                index = 3;
+                                break;
+                            case MatchValue.Indigo:
+                                index = 4;
+                                break;
+                            default:
+                                index = 0;
+                                break;
+                        }
+                        m_particleManager.ClearPieceFXAt(piece.xIndex, piece.yIndex, index);
                     }
                 }
             }

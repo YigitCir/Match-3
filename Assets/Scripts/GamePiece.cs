@@ -5,13 +5,9 @@ public enum MatchValue
 {
 	Yellow,
 	Blue,
-	Magenta,
 	Indigo,
 	Green,
-	Teal,
 	Red,
-	Cyan,
-	Wild,
 	None
 }
 
