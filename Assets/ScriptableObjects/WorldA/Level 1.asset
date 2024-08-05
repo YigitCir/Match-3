@@ -12,20 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15beef1b3e8f4f6bb0866fa76da5d30, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  width: 6
-  height: 6
+  width: 5
+  height: 5
   gamePiecePrefabs:
-  - {fileID: 1836425604369276, guid: 7471f6d24260942c499dd3fbbeccadc6, type: 3}
-  - {fileID: 1282329895864240, guid: 16eff60049fa742e09c4e037182057a2, type: 3}
-  - {fileID: 1372902284518312, guid: ddd7ecb364d034ad295c2ea9c8df1999, type: 3}
-  - {fileID: 1664362004353522, guid: ded3823fda2b64d07a29783e0ce9acc9, type: 3}
-  - {fileID: 1764584299026588, guid: d25f2e53e91ce49bd99d368bec39987a, type: 3}
+  - {fileID: 1203985530746317082, guid: 46797feb9069945a1baba0d12cbd897d, type: 3}
+  - {fileID: 9074000437142229919, guid: 46c13c5f33ead46b298563e8b2461ca1, type: 3}
+  - {fileID: 3975323237458149431, guid: ae9127418c9744dcab270a05dce1c6a7, type: 3}
   startingTiles: []
   startingGamePieces: []
   startingBlockers: []
   chanceForCollectible: 0
-  collectionGoals: []
+  collectionGoals:
+  - {fileID: 5579275237045447422, guid: b7bc6be7b9aee4db087d4f35445d684f, type: 3}
   scoreGoals: 320000006400000096000000
   movesLeft: 50
-  timeLeft: 60
-  levelCounter: 1
+  timeLeft: 120
+  levelCounter: 0
