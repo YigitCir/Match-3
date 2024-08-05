@@ -377,11 +377,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearFXPrefab:
-  - {fileID: 5004789151864676395, guid: a47464377b7f74a9685e3d10ba0f001e, type: 3}
-  - {fileID: 3336146232199735481, guid: cf32060a875b44e80a58487e5eba90bd, type: 3}
-  - {fileID: 4944898651493832491, guid: 92653497840e841f69244748ca387a2f, type: 3}
-  - {fileID: 132817928152640252, guid: d4643cab6268643a7bfddd45e9652767, type: 3}
-  - {fileID: 6717449472017726640, guid: 9b7214103c1da4c32844210fe4d7a532, type: 3}
+  - {fileID: 2501364523583184049, guid: 2aea12dc784e14876b949a94fd1669e9, type: 3}
+  - {fileID: 4470292712782336739, guid: d623233b00c8c473896fd5be5b63997d, type: 3}
+  - {fileID: 193645101408337368, guid: 9db45cc0a6d814cd7a51f46bbc71ad07, type: 3}
+  - {fileID: 9151051819564446417, guid: 685a3d24503594097aadedae97f023b4, type: 3}
+  - {fileID: 4335981349432041412, guid: 02c2de44fa00c4095865eba3e5e97b59, type: 3}
+  - {fileID: 2501364523583184049, guid: 2aea12dc784e14876b949a94fd1669e9, type: 3}
   breakFXPrefab: {fileID: 1000013032388978, guid: dca6c51fc5c6549548508efd58bdfdb9, type: 3}
   doubleBreakFXPrefab: {fileID: 1000013940112220, guid: f35d57202eae54e0d92bd1d2feed734e, type: 3}
   bombFXPrefab: {fileID: 2076707471915597859, guid: 66191bcaed7ba4e0ca57251dc4d46b79, type: 3}
@@ -857,7 +858,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 1
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -1154,66 +1155,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239711366}
   m_CullTransparentMesh: 1
---- !u!1 &1336674285
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1336674288}
-  - component: {fileID: 1336674287}
-  - component: {fileID: 1336674286}
-  m_Layer: 0
-  m_Name: VisualScripting SceneVariables
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1336674286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336674285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 765181c9ef4b24d32a4f7cbd2ef370dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1336674287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336674285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Scene","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
---- !u!4 &1336674288
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336674285}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1357382801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,35 +1634,27 @@ MonoBehaviour:
   width: 5
   height: 5
   borderSize: 1
-  tileNormalPrefab: {fileID: 5046196230684595585, guid: ee90ce6ae95ee43f0b19ec6b5053669b, type: 3}
-  tileObstaclePrefab: {fileID: 5046196230684595585, guid: ee90ce6ae95ee43f0b19ec6b5053669b, type: 3}
+  tileNormalPrefab: {fileID: 6232472009073005148, guid: f243f14fa1b294c2480881b299e785c6, type: 3}
+  tileObstaclePrefab: {fileID: 6232472009073005148, guid: f243f14fa1b294c2480881b299e785c6, type: 3}
   gamePiecePrefabs:
-  - {fileID: 1203985530746317082, guid: 46797feb9069945a1baba0d12cbd897d, type: 3}
-  - {fileID: 9074000437142229919, guid: 46c13c5f33ead46b298563e8b2461ca1, type: 3}
-  - {fileID: 1363971274548524812, guid: eed67e8ff47064e0b85a4a3f5ce1efc2, type: 3}
-  - {fileID: 3975323237458149431, guid: ae9127418c9744dcab270a05dce1c6a7, type: 3}
-  - {fileID: 1682774768043227977, guid: a147b7682a11d47eb975b373e212f4de, type: 3}
-  adjacentBombPrefab: {fileID: 6547687184902755508, guid: 9526b06a1a21b428ca8739dfea544b2c, type: 3}
-  columnBombPrefab: {fileID: 5469505674430695504, guid: 044c9958d68d748d09e82fd50881f6e8, type: 3}
-  rowBombPrefab: {fileID: 5469505674430695504, guid: 044c9958d68d748d09e82fd50881f6e8, type: 3}
-  colorBombPrefab: {fileID: 6026949210280470385, guid: 96c64ba7e8afa42879ef7625d3d22d6f, type: 3}
+  - {fileID: 8120703929137188102, guid: 82349db0cf6694468aa46e3f3773ef0f, type: 3}
+  - {fileID: 6188681264555342843, guid: 87964908523434aab9bfb4345b3c94f9, type: 3}
+  - {fileID: 7505236888872400900, guid: e219d86d4658e4b6886d655cd3e6d9be, type: 3}
+  - {fileID: 5585705155522881520, guid: 15591fafd2ed140199a77956afc78440, type: 3}
+  - {fileID: 8121052745698366436, guid: 5ff597b0b485e47ca8eec5234efd6f06, type: 3}
+  adjacentBombPrefab: {fileID: 5585705155522881520, guid: 15591fafd2ed140199a77956afc78440, type: 3}
+  columnBombPrefab: {fileID: 5585705155522881520, guid: 15591fafd2ed140199a77956afc78440, type: 3}
+  rowBombPrefab: {fileID: 5585705155522881520, guid: 15591fafd2ed140199a77956afc78440, type: 3}
+  colorBombPrefab: {fileID: 5585705155522881520, guid: 15591fafd2ed140199a77956afc78440, type: 3}
   maxCollectibles: 1
   collectibleCount: 1
   chanceForCollectible: 1
   collectiblePrefabs:
-  - {fileID: 5550184848327991760, guid: ce3bf9bf3e5f64cf48372ec90d051bdc, type: 3}
+  - {fileID: 9183917735979207631, guid: e2e968e4494b64db9a4f18ce6e0a343d, type: 3}
   swapTime: 0.225
   startingTiles: []
-  startingGamePieces:
-  - prefab: {fileID: 6026949210280470385, guid: 96c64ba7e8afa42879ef7625d3d22d6f, type: 3}
-    x: 3
-    y: 3
-    z: 0
-  - prefab: {fileID: 6547687184902755508, guid: 9526b06a1a21b428ca8739dfea544b2c, type: 3}
-    x: 1
-    y: 2
-    z: 0
-  fillYOffset: 0
+  startingGamePieces: []
+  fillYOffset: 10
   fillMoveTime: 0.2
 --- !u!4 &1688913552
 Transform:
@@ -2245,4 +2178,3 @@ SceneRoots:
   - {fileID: 352117024}
   - {fileID: 1013188353}
   - {fileID: 1727312869}
-  - {fileID: 1336674288}
