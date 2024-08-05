@@ -32,7 +32,7 @@ public class BoardClearer : MonoBehaviour
 
                 if (board.particleManager != null)
                 {
-                    board.particleManager.ClearPieceFXAt(i, j);
+                    board.particleManager.ClearPieceFXAt(i, j,0);
                 }
             }
         }
@@ -169,7 +169,7 @@ public class BoardClearer : MonoBehaviour
                     // ... cleared normally
                     else
                     {
-                        board.particleManager.ClearPieceFXAt(piece.xIndex, piece.yIndex);
+                        board.particleManager.ClearPieceFXAt(piece.xIndex, piece.yIndex,(int)piece.matchValue);
                     }
                 }
             }
